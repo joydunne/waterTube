@@ -5,13 +5,13 @@ from jStats import *
 # Finite Difference Model
 
 #PARAMETERS
-dt = 1
-nsteps = 160
+dt = 5
+nsteps = 200
 
 r = 2.25 # radius (cm)
-Qin = 0 # Volume inflow rate (dV/dt) : (cubic cm/s)
-h = 50 #intial height (cm)
-k = 0.1 #outflow rate constant
+Qin = 30 # Volume inflow rate (dV/dt) : (cubic cm/s)
+h = 0 #intial height (cm)
+k = 0.15 #outflow rate constant
 
 # EXPERIMENTAL DATA
 y_modeled = []
@@ -32,7 +32,6 @@ for t in range (1, nsteps) :
 
     #Filling
     dh = Qin * dt / (np.pi * r **2) #find the change in height
-
     h = h + dh #update height
 
     # Draining
@@ -41,7 +40,7 @@ for t in range (1, nsteps) :
     h = h + dh
 
     graph.add (modelTime , h)
-    #graph.wait (0.8)
+    #graph.wait (0.1)
 
 # DRAW GRAPH
 graph.keepOpen ()

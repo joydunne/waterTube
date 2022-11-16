@@ -19,18 +19,16 @@ y_measured = [50, 40, 30, 20, 10, 0]
 y_modeled = [h]
 
 # GRAPH
-graph = ezGraph (xmin=0, xmax=100,
+graph = ezGraphMM (xmin=0, xmax=100,
             xLabel= "Time (s)", 
             yLabel= "Height (cm)", 
             x_measured = x_measured,
             y_measured = y_measured)
 
 graph.addModeled (0, h) # add intial vaules 
-
 # TIME LOOP
 for t in range (1, nsteps) :
     modelTime = t * dt
-
     #Filling
     dh = Qin * dt / (np.pi * r **2) #find the change in height
 
@@ -63,7 +61,6 @@ print (f'difference: {dsq (y_measured)}')
 
 #Rs value 
 print ("R2:", rSquared (y_measured, y_modeled))
-
 # DRAW GRAPH
 graph.keepOpen ()
 

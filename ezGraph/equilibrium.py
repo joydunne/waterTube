@@ -13,8 +13,8 @@ from jStats import *
 startTime = time.perf_counter()
 
 #PARAMETERS
-dt = 5
-nsteps = 200
+dt = 15
+nsteps = 500
 
 r = 2.25 # radius (cm)
 Qin = 30 # Volume inflow rate (dV/dt) : (cubic cm/s)
@@ -59,8 +59,8 @@ print (h)
 
 endTime = time.perf_counter()
 
-runtime - endTime - startTime
-print (f'runtime: {runtime}')
+runTime - endTime - startTime
+print (f'runtime: {runTime}')
 
 
 # DRAW GRAPH
