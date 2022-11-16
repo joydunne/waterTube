@@ -19,7 +19,7 @@ y_measured = [50, 40, 30, 20, 10, 0]
 y_modeled = [h]
 
 # GRAPH
-graph = ezGraphMM (xmin=0, xmax=100,
+graph = ezGraph (xmin=0, xmax=100,
             xLabel= "Time (s)", 
             yLabel= "Height (cm)", 
             x_measured = x_measured,
