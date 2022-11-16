@@ -6,7 +6,7 @@ from jStats import *
 
 #PARAMETERS
 dt = 1
-nsteps = 200
+nsteps = 100
 
 r = 2.25 # radius (cm)
 Qin = 30 # Volume inflow rate (dV/dt) : (cubic cm/s)
@@ -22,13 +22,24 @@ graph = ezGraph (xmin=0, xmax=100,
             yLabel= "Height (cm)")
 
 graph.add(0, h) # add intial vaules 
-
+ 
+Qflag = True 
 # TIME LOOP
 for t in range (1, nsteps) :
     modelTime = t * dt
 
-
-
+    #turning the inflow rate on and off
+    if 0 == modelTime%5:
+        if Qflag:
+            Qflag = False
+        else:
+            Qflag = True
+    
+    if Qflag:
+        Qin = 30
+    else:
+        Qin = 0 
+    print (modelTime, Qflag, Qin)
     #Filling
     dh = Qin * dt / (np.pi * r **2) #find the change in height
     h = h + dh #update height
