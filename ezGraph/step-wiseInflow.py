@@ -4,6 +4,8 @@ from ezGraph import *
 from jStats import * 
 # Finite Difference Model
 
+#on and off flow 
+
 #PARAMETERS
 dt = 1
 nsteps = 100
